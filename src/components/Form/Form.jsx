@@ -7,7 +7,7 @@ import Notiflix from 'notiflix';
 import {
   useCreateContactMutation,
   useGetContactsQuery,
-} from 'Redux/contactsApi';
+} from 'Redux/contacts/contactsApi';
 
 Notiflix.Notify.init({
   position: 'center-top',
