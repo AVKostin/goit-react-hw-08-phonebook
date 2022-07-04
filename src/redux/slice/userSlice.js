@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import * as extraReducersUser from 'redux/reducers/reducers-user';
+
 const initialState = {
   user: {
     name: null,
