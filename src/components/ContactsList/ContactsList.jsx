@@ -2,7 +2,7 @@ import { ContactsItem } from './ContactsItem';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from 'redux/operations/operations-contacts';
-import { setFilterValue } from 'redux/slice/slice-contacts';
+import { setFilterValue } from 'redux/slice/сontactsSlice';
 import { toast } from 'react-toastify';
 import selectors from 'redux/selectors';
 import LoaderPage from 'components/LoaderPage';
