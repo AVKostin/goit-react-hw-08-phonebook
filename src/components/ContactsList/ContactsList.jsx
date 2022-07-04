@@ -1,17 +1,14 @@
-import { ContactsItem } from './ContactsItem';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchContacts } from 'redux/operations/operations-contacts';
-import { setFilterValue } from '../../redux/slice/contactsSlice';
 import { toast } from 'react-toastify';
-import selectors from 'redux/selectors';
-import LoaderPage from 'components/LoaderPage';
-import Container from '@mui/material/Container';
-import TextField from '@mui/material/TextField';
-import Tooltip from '@mui/material/Tooltip';
-import InputAdornment from '@mui/material/InputAdornment';
+import { Container, TextField, Tooltip, InputAdornment } from '@mui/material';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 
+import LoaderPage from 'components/LoaderPage';
+import { ContactsItem } from './ContactsItem';
+import selectors from 'redux/selectors';
+import { fetchContacts } from 'redux/operations/operations-contacts';
+import { setFilterValue } from 'redux/slice/contactsSlice';
 import styles from './ContactsItem/styles.module.css';
 
 const { getContactsStatus, getFilterValue, getFilteredContacts } = selectors;
