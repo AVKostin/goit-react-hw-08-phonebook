@@ -1,5 +1,4 @@
 import { Audio } from 'react-loader-spinner';
-
 import styles from './LoaderPage.module.css';
 
 const LoaderPage = () => {
