@@ -1,5 +1,4 @@
 import { Oval } from 'react-loader-spinner';
-
 import styles from './LoaderButton.module.css';
 
 export const LoaderButton = () => {
