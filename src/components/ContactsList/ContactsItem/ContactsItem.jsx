@@ -1,19 +1,18 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
+import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
+import { BsTelephone } from 'react-icons/bs';
+import { IoIosContact } from 'react-icons/io';
+import { useSelector } from 'react-redux';
+import { CircularProgress, Link } from '@mui/material';
+import { MdOutlineDeleteForever } from 'react-icons/md';
 import {
   deleteContact,
   fetchContacts,
 } from 'redux/operations/operations-contacts';
-import { useSelector } from 'react-redux';
-import { useState } from 'react';
-import { toast } from 'react-toastify';
 import selectors from 'redux/selectors';
-import CircularProgress from '@mui/material/CircularProgress';
-import { MdOutlineDeleteForever } from 'react-icons/md';
-import Link from '@mui/material/Link';
 import styles from './styles.module.css';
-import { BsTelephone } from 'react-icons/bs';
-import { IoIosContact } from 'react-icons/io';
 
 const { getContactsStatus } = selectors;
 
