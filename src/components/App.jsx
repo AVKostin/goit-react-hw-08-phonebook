@@ -1,14 +1,14 @@
 import React, { lazy, Suspense, useEffect } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
-import { routesPaths } from 'routerSettings/routesPaths';
-import { ProtectedRoute } from 'utils/ProtectedRoute';
-import ResponsiveAppBar from './ResponsiveAppBar';
-import LoaderPage from './LoaderPage';
+import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useDispatch, useSelector } from 'react-redux';
+import ResponsiveAppBar from './ResponsiveAppBar';
+import LoaderPage from './LoaderPage';
 import selectors from 'redux/selectors';
+import { ProtectedRoute } from 'utils/ProtectedRoute';
 import { currentUser } from 'redux/operations/operations-user';
+import { routesPaths } from 'routerSettings/routesPaths';
 
 const HomePage = lazy(() =>
   import('../pages/HomePage' /* webpackChunkName: "home-page" */)
