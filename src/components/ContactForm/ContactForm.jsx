@@ -1,20 +1,22 @@
 import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import ImportContactsIcon from '@mui/icons-material/ImportContacts';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import Box from '@mui/material/Box';
-import Tooltip from '@mui/material/Tooltip';
 import { useState } from 'react';
 import { toast } from 'react-toastify';
-import selectors from 'redux/selectors';
+import { useDispatch, useSelector } from 'react-redux';
+import ImportContactsIcon from '@mui/icons-material/ImportContacts';
+import {
+  Avatar,
+  Container,
+  Typography,
+  Button,
+  TextField,
+  Box,
+  Tooltip,
+} from '@mui/material';
 import {
   addContact,
   fetchContacts,
 } from 'redux/operations/operations-contacts';
-import { useDispatch, useSelector } from 'react-redux';
+import selectors from 'redux/selectors';
 import { LoaderButton } from 'components/LoaderButton';
 import styles from '../ContactForm/ContactForm.module.css';
 
