@@ -1,10 +1,7 @@
 import * as React from 'react';
+import { toast } from 'react-toastify';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { routesPaths } from 'routerSettings/routesPaths';
-import selectors from 'redux/selectors';
-import { logoutUser } from 'redux/operations/operations-user';
-import { toast } from 'react-toastify';
 import MenuIcon from '@mui/icons-material/Menu';
 import ContactPhoneIcon from '@mui/icons-material/ContactPhone';
 import {
@@ -20,6 +17,9 @@ import {
   Tooltip,
   MenuItem,
 } from '@mui/material';
+import { routesPaths } from 'routerSettings/routesPaths';
+import selectors from 'redux/selectors';
+import { logoutUser } from 'redux/operations/operations-user';
 
 const ResponsiveAppBar = () => {
   const isAuth = useSelector(selectors.getIsAuth);
