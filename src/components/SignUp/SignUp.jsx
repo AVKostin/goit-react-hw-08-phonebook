@@ -1,22 +1,28 @@
 import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import InputAdornment from '@mui/material/InputAdornment';
-import IconButton from '@mui/material/IconButton';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Link } from 'react-router-dom';
-import { routesPaths } from 'routerSettings/routesPaths';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+
+import {
+  Avatar,
+  Button,
+  CssBaseline,
+  TextField,
+  InputAdornment,
+  IconButton,
+  Grid,
+  Box,
+  Typography,
+  Container,
+  createTheme,
+  ThemeProvider,
+} from '@mui/material';
+
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Visibility from '@mui/icons-material/Visibility';
+
+import { routesPaths } from 'routerSettings/routesPaths';
 import { registerUser } from 'redux/operations/operations-user';
 import selectors from 'redux/selectors';
 import { LoaderButton } from 'components/LoaderButton';
