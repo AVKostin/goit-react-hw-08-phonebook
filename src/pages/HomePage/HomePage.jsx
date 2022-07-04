@@ -1,10 +1,6 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
 import { useNavigate } from 'react-router-dom';
+import { Button, Stack, Box, Typography, Container } from '@mui/material';
 import { routesPaths } from 'routerSettings/routesPaths';
 
 export default function HomePage() {
