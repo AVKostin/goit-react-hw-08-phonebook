@@ -10,8 +10,8 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import authReducer from './slice/slice-user';
-import contactsReducer from './slice/slice-contacts';
+import authReducer from './slice/sliceUser';
+import contactsReducer from './slice/sliceContacts';
 
 const persistConfig = {
   key: 'auth',
