@@ -1,6 +1,7 @@
 import { http } from './api';
 
-const baseURL = 'https://connections-api.herokuapp.com';
+// const baseURL = 'https://connections-api.herokuapp.com';
+const baseURL = 'https://finantial-book-kapusta.herokuapp.com';
 
 export const registerUser = userData => {
   return http.post(`${baseURL}/users/signup`, userData);
