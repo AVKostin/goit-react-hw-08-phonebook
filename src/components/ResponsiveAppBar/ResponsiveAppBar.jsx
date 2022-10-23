@@ -1,24 +1,24 @@
 import * as React from "react";
 import { toast } from "react-toastify";
-import { useSelector, useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import ContactPhoneIcon from "@mui/icons-material/ContactPhone";
 import {
-    AppBar,
     Box,
-    Toolbar,
-    IconButton,
-    Typography,
     Menu,
-    Container,
+    AppBar,
     Avatar,
     Button,
+    Toolbar,
     Tooltip,
     MenuItem,
+    Container,
+    IconButton,
+    Typography,
 } from "@mui/material";
-import { routesPaths } from "routerSettings/routesPaths";
 import selectors from "redux/selectors";
+import { routesPaths } from "routerSettings/routesPaths";
 import { logoutUser } from "redux/operations/operations-user";
 
 const ResponsiveAppBar = () => {
@@ -185,7 +185,6 @@ const ResponsiveAppBar = () => {
                             <ContactPhoneIcon fontSize="large" />
                         </Link>
                     </Box>
-
                     <Box
                         sx={{
                             flexGrow: 1,
@@ -202,7 +201,6 @@ const ResponsiveAppBar = () => {
                             </Button>
                         ))}
                     </Box>
-
                     <Box sx={{ flexGrow: 0 }}>
                         {isAuth && (
                             <Typography
