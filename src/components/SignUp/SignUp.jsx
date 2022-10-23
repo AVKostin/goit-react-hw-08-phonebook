@@ -10,18 +10,18 @@ import { routesPaths } from "routerSettings/routesPaths";
 import Visibility from "@mui/icons-material/Visibility";
 import { LoaderButton } from "components/LoaderButton";
 import {
+    Box,
+    Grid,
     Avatar,
     Button,
-    CssBaseline,
-    TextField,
-    InputAdornment,
-    IconButton,
-    Grid,
-    Box,
-    Typography,
     Container,
+    TextField,
+    IconButton,
+    Typography,
+    CssBaseline,
     createTheme,
     ThemeProvider,
+    InputAdornment,
 } from "@mui/material";
 
 const theme = createTheme();
