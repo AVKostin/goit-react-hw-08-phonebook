@@ -1,102 +1,100 @@
-import React, { lazy, Suspense, useEffect } from 'react';
-import { Route, Routes, Navigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import ResponsiveAppBar from './ResponsiveAppBar';
-import LoaderPage from './LoaderPage';
-import selectors from 'redux/selectors';
-import { ProtectedRoute } from 'utils/ProtectedRoute';
-import { currentUser } from 'redux/operations/operations-user';
-import { routesPaths } from 'routerSettings/routesPaths';
+import React, { lazy, Suspense, useEffect } from "react";
+import { Route, Routes, Navigate } from "react-router-dom";
+import { currentUser } from "redux/operations/operations-user";
+import { routesPaths } from "routerSettings/routesPaths";
+import { useDispatch, useSelector } from "react-redux";
+import { ProtectedRoute } from "utils/ProtectedRoute";
+import ResponsiveAppBar from "./ResponsiveAppBar";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import selectors from "redux/selectors";
+import LoaderPage from "./LoaderPage";
 
 const HomePage = lazy(() =>
-  import('../pages/HomePage' /* webpackChunkName: "home-page" */)
+    import("../pages/HomePage" /* webpackChunkName: "home-page" */),
 );
-
 const ContactsPage = lazy(() =>
-  import('../pages/ContactsPage' /* webpackChunkName: "contacts-page" */)
+    import("../pages/ContactsPage" /* webpackChunkName: "contacts-page" */),
 );
 const RegisterPage = lazy(() =>
-  import('../pages/RegisterPage' /* webpackChunkName: "register-page" */)
+    import("../pages/RegisterPage" /* webpackChunkName: "register-page" */),
 );
-
 const LoginPage = lazy(() =>
-  import('../pages/LoginPage' /* webpackChunkName: "login-page" */)
+    import("../pages/LoginPage" /* webpackChunkName: "login-page" */),
 );
 
 export const App = () => {
-  const isAuth = useSelector(selectors.getIsAuth);
-  const dispatch = useDispatch();
+    const isAuth = useSelector(selectors.getIsAuth);
+    const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(currentUser());
-  }, [dispatch]);
-
-  return (
-    <>
-      <ResponsiveAppBar />
-      <Routes>
-        <Route
-          index
-          element={
-            <Suspense fallback={<LoaderPage />}>
-              <HomePage />
-            </Suspense>
-          }
-        />
-        <Route
-          path={routesPaths.homePage}
-          element={
-            <Suspense fallback={<LoaderPage />}>
-              <HomePage />
-            </Suspense>
-          }
-        />
-
-        <Route
-          path={routesPaths.contactsPage}
-          element={
-            <ProtectedRoute
-              redirectPath={routesPaths.loginPage}
-              isAllowed={isAuth}
-            >
-              <Suspense fallback={<LoaderPage />}>
-                <ContactsPage />
-              </Suspense>
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path={routesPaths.registerPage}
-          element={
-            <ProtectedRoute
-              redirectPath={routesPaths.contactsPage}
-              isAllowed={!isAuth}
-            >
-              <Suspense fallback={<LoaderPage />}>
-                <RegisterPage />
-              </Suspense>
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path={routesPaths.loginPage}
-          element={
-            <ProtectedRoute
-              redirectPath={routesPaths.contactsPage}
-              isAllowed={!isAuth}
-            >
-              <Suspense fallback={<LoaderPage />}>
-                <LoginPage />
-              </Suspense>
-            </ProtectedRoute>
-          }
-        />
-        <Route path="*" element={<Navigate to={routesPaths.homePage} />} />
-      </Routes>
-
-      <ToastContainer position="top-center" autoClose={1000} />
-    </>
-  );
+    useEffect(() => {
+        dispatch(currentUser());
+    }, [dispatch]);
+    return (
+        <>
+            <ResponsiveAppBar />
+            <Routes>
+                <Route
+                    index
+                    element={
+                        <Suspense fallback={<LoaderPage />}>
+                            <HomePage />
+                        </Suspense>
+                    }
+                />
+                <Route
+                    path={routesPaths.homePage}
+                    element={
+                        <Suspense fallback={<LoaderPage />}>
+                            <HomePage />
+                        </Suspense>
+                    }
+                />
+                <Route
+                    path={routesPaths.contactsPage}
+                    element={
+                        <ProtectedRoute
+                            redirectPath={routesPaths.loginPage}
+                            isAllowed={isAuth}
+                        >
+                            <Suspense fallback={<LoaderPage />}>
+                                <ContactsPage />
+                            </Suspense>
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path={routesPaths.registerPage}
+                    element={
+                        <ProtectedRoute
+                            redirectPath={routesPaths.contactsPage}
+                            isAllowed={!isAuth}
+                        >
+                            <Suspense fallback={<LoaderPage />}>
+                                <RegisterPage />
+                            </Suspense>
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path={routesPaths.loginPage}
+                    element={
+                        <ProtectedRoute
+                            redirectPath={routesPaths.contactsPage}
+                            isAllowed={!isAuth}
+                        >
+                            <Suspense fallback={<LoaderPage />}>
+                                <LoginPage />
+                            </Suspense>
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="*"
+                    element={<Navigate to={routesPaths.homePage} />}
+                />
+            </Routes>
+            <ToastContainer position="top-center" autoClose={1000} />
+        </>
+    );
 };
